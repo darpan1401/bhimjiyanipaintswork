@@ -1,10 +1,57 @@
-<section id="contact" class="contact-section">
-  <h2>Contact Us</h2>
-  <form class="contact-form" (ngSubmit)="onSubmit()" #form="ngForm">
-    <input type="text" name="name" [(ngModel)]="formData.name" required placeholder="Your Name">
-    <input type="tel" name="phone" [(ngModel)]="formData.phone" required placeholder="Your Number">
-    <input type="text" name="address" [(ngModel)]="formData.address" required placeholder="Your Address">
-    <textarea name="message" [(ngModel)]="formData.message" required placeholder="Your Message" rows="5"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+<div class="blur-overlay" *ngIf="loading">
+    <p>Sending message...</p>
+  </div>
+
+
+  
+
+<div class="contact-form-container">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+        
+        <!-- Name Field -->
+       
+        <input type="text" id="name" name="name" [(ngModel)]="contact.name" #name="ngModel" 
+            placeholder="Your Name" required minlength="3" pattern="^[a-zA-Z ]+$">
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+    <div *ngIf="name.errors?.['required']">Name is required.</div>
+    <div *ngIf="name.errors?.['minlength']">Name must be at least 3 characters long.</div>
+    <div *ngIf="name.errors?.['pattern']">Only characters and spaces are allowed.</div>
+</div>
+
+
+        <!-- Email Field -->
+       
+        <input type="email" id="email" name="email" [(ngModel)]="contact.email" #email="ngModel"
+            placeholder="Your Email" required email>
+
+
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+    <div *ngIf="email.errors?.['required']">Email is required.</div>
+    <div *ngIf="email.errors?.['email']">Enter a valid email address.</div>
+</div>
+
+
+        <!-- Phone Field -->
+        
+        <input type="tel" id="phone" name="phone" [(ngModel)]="contact.phone" #phone="ngModel"
+            placeholder="Your Phone Number" required pattern="[0-9]{10}">
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error">
+
+            <div *ngIf="phone.errors?.['required']">Phone number is required.</div>
+            <div *ngIf="phone.errors?.['pattern']">Enter a valid 10-digit phone number.</div>
+        </div>
+
+        <!-- Message Field -->
+    
+        <textarea id="message" name="message" [(ngModel)]="contact.message" #message="ngModel"
+            placeholder="Your Message" required minlength="10"></textarea>
+        <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
+            <div *ngIf="message.errors?.['required']">Message is required.</div>
+            <div *ngIf="message.errors?.['minlength']">Message must be at least 10 characters long.</div>
+        </div>
+
+        <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+    </form>
+</div>
+

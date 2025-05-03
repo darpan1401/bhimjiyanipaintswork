@@ -1,5 +1,3 @@
-
-
 /* Hero Section */
 .hero-section {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
@@ -13,7 +11,7 @@
 
 /* Navbar */
 .navbar {
-  position: absolute; /* Fix navbar to the top */
+  position: absolute; /* Fix navbar at the top */
   top: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -22,6 +20,7 @@
   padding: 15px 5%;
   align-items: center;
   z-index: 10; /* Keep navbar on top */
+  box-sizing: border-box;
 }
 
 /* Brand Name Styling */
@@ -141,5 +140,40 @@
     padding-top: 40px;   /* Reduce top padding */
     padding-bottom: 30px; /* Reduce bottom padding */
     min-height: 80vh;    /* Reduce the minimum height */
+  }
+}
+
+/* Larger Screen (Laptop and up) */
+@media (min-width: 769px) {
+  .navbar {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+
+  .hero-section {
+    padding-top: 80px;   /* Standard padding for larger screens */
+    padding-bottom: 60px;
+    min-height: 100vh;    /* Full screen height */
   }
 }

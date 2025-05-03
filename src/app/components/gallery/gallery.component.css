@@ -1,0 +1,61 @@
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  /* Gallery Container */
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Gallery Item */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Lightbox Effect (Optional) */
+  .gallery-item img:focus {
+    transform: scale(1.2);
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .gallery-section {
+      padding: 40px 10px;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .gallery-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+  
