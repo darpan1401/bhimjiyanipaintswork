@@ -1,0 +1,10 @@
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <form class="contact-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <input type="text" name="name" [(ngModel)]="formData.name" required placeholder="Your Name">
+    <input type="tel" name="phone" [(ngModel)]="formData.phone" required placeholder="Your Number">
+    <input type="text" name="address" [(ngModel)]="formData.address" required placeholder="Your Address">
+    <textarea name="message" [(ngModel)]="formData.message" required placeholder="Your Message" rows="5"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>

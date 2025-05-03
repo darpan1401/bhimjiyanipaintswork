@@ -1,0 +1,145 @@
+
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding-top: 80px;
+  position: relative;
+  text-align: center;
+  min-height: 100vh; /* Ensure full screen height */
+  padding-bottom: 60px;
+}
+
+/* Navbar */
+.navbar {
+  position: absolute; /* Fix navbar to the top */
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 5%;
+  align-items: center;
+  z-index: 10; /* Keep navbar on top */
+}
+
+/* Brand Name Styling */
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+/* Navbar Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #ffc107;
+}
+
+/* Hamburger Icon (hidden on larger screens) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 120px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #ffc107;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background: #e0a800;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show the menu when it's active */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero Content */
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    padding-top: 40px;   /* Reduce top padding */
+    padding-bottom: 30px; /* Reduce bottom padding */
+    min-height: 80vh;    /* Reduce the minimum height */
+  }
+}

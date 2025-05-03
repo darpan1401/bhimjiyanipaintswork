@@ -1,0 +1,21 @@
+/* Footer Styling */
+.footer {
+  background-color: #0f2027; /* Dark background to match the theme */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+
+
+.footer p {
+  font-size: 0.9rem; /* Slightly smaller font size for the copyright */
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.8rem; /* Reduce font size on smaller screens */
+  }
+}
